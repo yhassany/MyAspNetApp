@@ -16,7 +16,7 @@ app.UseHttpsRedirection();
 
 var summaries = new[]
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    "Freezing1", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
 app.MapGet("/weatherforecast", () =>
@@ -44,6 +44,18 @@ app.MapGet("/Products", () =>
    return products;
 })
 .WithName("Products");
+
+app.MapGet("/Employees", () =>
+{
+    var Employees = new[]
+        {
+            new { Id = 1, Name = "Ali" },
+            new { Id = 2, Name = "Sara" }
+        };
+
+   return Employees;
+})
+.WithName("Employees");
 
 app.Run();
 
